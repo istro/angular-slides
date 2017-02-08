@@ -1,0 +1,90 @@
+@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+body { font-family: 'Droid Serif'; }
+h1, h2, h3 {
+  font-family: 'Yanone Kaffeesatz';
+  font-weight: normal;
+  margin: .5em 0;
+}
+.fw img {
+  width: 100%;
+}
+.fh img {
+  height: 600px;
+}
+.fr {
+  float: right;
+  margin-left: 15px;
+}
+.fl {
+  float: left;
+  margin-right: 15px;
+}
+.remark-code, .remark-inline-code {
+  background: #eee;
+  font-family: 'Ubuntu Mono';
+  padding: 2px 7px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+}
+.m20 {
+  margin: 20px;
+}
+.sm {
+  font-size: 80%;
+}
+.xs {
+  font-size: 60%;
+}
+.block {
+  display: block;
+}
+.note {
+  font-style: italic;
+  font-size: 80%;
+}
+img[alt='att'] {
+  width: 205px;
+}
+img[alt='headless'] {
+  margin: 0 175px;
+}
+.hljs-monokai .hljs {
+  background-color: #f4f4f4;
+  color: #272822;
+}
+.remark-code {
+  font-size: 14px;
+}
+iframe {
+  margin: 0 auto;
+}
+.half {
+  width: 50%;
+  float: left;
+}
+.color-block {
+  text-align: center;
+  padding: 10px;
+  color: #fff;
+}
+.color-block h3 {
+  margin: 0;
+}
+.color-block.green {
+  background-color: #33e089;
+}
+.color-block.blue {
+  background-color: #388ee4;
+}
+.color-block.purple {
+  background-color: #b666c6;
+}
+.color-block.red {
+  background-color: #f84c4c;
+}
+.space {
+  padding: 10px;
+}

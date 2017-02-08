@@ -1,0 +1,173 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/remark.css">
+
+		<link rel="stylesheet" href="css/theme/moon.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section data-markdown>
+					<script type="text/template">
+						# AngularJS (1.x)
+						### toolset to extend HTML
+					</script>
+				</section>
+
+				<section>WHY</section>
+
+				<section>
+					<section>
+						WHY NOT
+						{{ insert_trendy_name_here }}
+						<aside class='notes'>
+							* Paradigm change about markup
+							* Unintuitive to debug when unfamiliar
+							* Need to have a good handle on prototypal inheritance
+						</aside>
+					</section>
+					<section>Ok, we know frameworks...</section>
+					<section>bits</section>
+					<section>bits</section>
+					<section>bits</section>
+					<section>legos</section>
+				</section>
+
+				<section>
+					<section>HOW</section>
+					<section>
+						<h3>Two lines to get started!</h3>
+						<p class='fragment'>with fragments</p>
+						<p class='fragment'>with fragments</p>
+						<p class='fragment'>with fragments</p>
+					</section>
+				</section>
+
+				<section>
+					RECAP:
+					AngularJS is a toolset to extend HTML.
+				</section>
+
+				<section>
+					<section>COMPONENTS</section>
+					<section>
+						<p class='fragment'>views</p>
+						<p class='fragment'>controllers</p>
+						<p class='fragment'>directives</p>
+						<p class='fragment'>services</p>
+						<p class='fragment'>more, link to docs</p>
+					</section>
+				</section>
+
+				<section>
+					<section>VIEWS</section>
+					<section>Example</section>
+				</section>
+
+				<section>
+					<section>
+						concept: $scope
+						<aside class='notes'>
+							mention prototypal inheritance, demo if necessary
+						</aside>
+					</section>
+					<section>example pic</section>
+					<section>debugging tip</section>
+				</section>
+
+				<section>
+					RECAP:
+					$scope is ..., an html element can have only one
+				</section>
+
+				<section>
+					<section>CONTROLLERS</section>
+					<section>basic example with html & js</section>
+					<section>example with $scope (only JS)</section>
+				</section>
+
+				<section>
+					RECAP:
+					controllers & their responsibilities
+				</section>
+
+				<section>
+					<section>DIRECTIVES</section>
+					<section>examples of different types</section>
+					<section>dirs & scope</section>
+				</section>
+
+				<section>
+					<section>concept: events in angularjs</section>
+					<section>
+						Example:
+						<p class='fragment'>subscribing</p>
+						<p class='fragment'>emitting</p>
+						<p class='fragment'>broadcasting</p>
+					</section>
+				</section>
+
+				<section>
+					RECAP:
+					Directives are ...
+				</section>
+
+				<section>
+					<section>SERVICES</section>
+					<section>examples</section>
+				</section>
+
+				<section>
+					RECAP:
+					Services are just functions.
+				</section>
+
+				<section>
+					<section>COMMUNICATION</section>
+					<section>via scope (pros, cons in notes)</section>
+					<section>via events (pros, cons in notes)</section>
+					<section>via services(pros, cons in notes)</section>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

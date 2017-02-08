@@ -1,0 +1,1 @@
+angular talk slides with reveal.js
