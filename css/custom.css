@@ -1,7 +1,7 @@
 /* holman colors */
 
 .reveal .slides .white {
-  color: #f0f2eb
+  color: #f0f2eb;
 }
 .reveal .slides .yellow {
   color: #cff564;
@@ -18,6 +18,9 @@
 .reveal .slides .red {
   color: #fc4247;
 }
+.reveal .slides .dark-red {
+  color: #cc363a;
+}
 .reveeal .slides .light-blue {
   color: #3ec8ef;
 }
@@ -25,6 +28,14 @@
 .reveal .slides .dark-blue h2,
 .reveal .slides .dark-blue p {
   color: #369abf;
+}
+
+.reveal .slides .no-transform {
+  text-transform: none;
+}
+
+.reveal .slides .yuge {
+  font-size: 7em;
 }
 
 .reveal section img {
@@ -62,7 +73,7 @@
 }
 
 .cons > div {
-  margin-top: -30%;
+  margin-top: -29%;
 }
 
 .cons .fragment,
@@ -75,6 +86,66 @@
   margin-left: 30px;
 }
 
+.reveal .fragment.h3 {
+  margin: 0 0 20px 0;
+  font-family: "League Gothic", Impact, sans-serif;
+  font-weight: normal;
+  font-size: 1.6em;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  text-shadow: none;
+  word-wrap: break-word;
+}
+
 .reveal .mt25 {
   margin-top: 25px;
+}
+
+.reveal .top {
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+.reveal .corner-ribbon {
+  background: #33a0ee;
+  color: #f0f0f0;
+  font-size: 2em;
+  opacity: .6;
+  padding: 0px 100px;
+  position: fixed;
+  right: -35%;
+  top: 10%;
+  transform: rotate(40deg);
+  -webkit-transform: rotate(40deg);
+  width: 80%;
+}
+
+.reveal .recap h1,
+.reveal .recap h3 {
+  margin: 0;
+  line-height: 1;
+}
+
+.reveal .recap h3 {
+  font-size: 2em;
+}
+
+.reveal .slides .how .fragment {
+  color: #f0f2eb;
+}
+
+.reveal .slides .how .fragment.example {
+  font-size: 50%;
+  box-shadow: none;
+  padding: 0;
+  position: relative;
+  margin: 0 auto;
+}
+
+.reveal .slides .how .fragment.example code {
+  position: absolute;
+  width: 100%;
+  top: 0;
 }

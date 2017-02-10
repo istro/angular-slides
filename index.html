@@ -55,14 +55,14 @@
 
 				<section data-background-color='#265ba3'>
 					<section>
-						<h1 class='white'>WHY</h1>
+						<h1 class='white yuge'>WHY</h1>
 						<aside class='notes'>
 							- As front-end needs rise, more JS is harder to manage<br>
 							- Bring engineering best practices to the front-end code<br>
 							- Maintainability
 						</aside>
 					</section>
-					<section class='cons' data-background-color=>
+					<section class='cons' data-background-color='#369abf' data-transition='slide-in fade-out'>
 						<div>
 							<h2>Cons</h2>
 							<p class='fragment'>- Paradigm change about markup</p>
@@ -70,7 +70,7 @@
 							<p class='fragment'>- Need to have a good handle on prototypal inheritance</p>
 						</div>
 					</section>
-					<section class='proscons' data-background-color='#3ec8ef'>
+					<section class='proscons' data-background-color='#3ec8ef' data-transition='fade'>
 						<div class='dark-blue'>
 							<h2>Cons</h2>
 							<p>- Paradigm change about markup</p>
@@ -84,6 +84,71 @@
 						<p class='fragment'>- Great testability</p>
 					</section>
 				</section>
+
+				<section>
+					<section>
+						<h2>So we know frameworks.</h2>
+					</section>
+					<section data-background-image='img/rails.jpg'>
+						<aside class='notes'>Frameworks have components</aside>
+					</section>
+					<section data-background-image='img/rails2.jpg'>
+						<aside class='notes'>And other components</aside>
+					</section>
+					<section data-background-image='img/rails3.jpg'>
+						<aside class='notes'>And they fit together a certain way</aside>
+					</section>
+					<section data-background-image='img/fanciness.gif'>
+						<aside class='notes'>They abstract away complexity</aside>
+					</section>
+					<section data-background-image='img/snowy.gif'>
+						<aside class='notes'>Once we know how they fit together, we'll know how it works</aside>
+					</section>
+					<section data-background-color='#f0f2eb'>
+						<h2 class='dark-blue'>Isn't angular somewhat like that?</h2>
+					</section>
+					<section data-background-image='img/legos.jpg'>
+						<p class='fragment h3 dark-blue top'>Nope. It's more like a pile of legos.</p>
+					</section>
+				</section>
+
+				<section class='recap' data-background-color='#8aa860' data-transition='zoom-in slide-out'>
+					<div class='corner-ribbon'>RECAP</div>
+					<h3>AngularJS is a</h3>
+					<h1 class='dark-red'>toolset</h1>
+					<h3 class='no-transform'>to extend HTML</h3>
+				</section>
+
+				<section class='how' data-background-color='#265ba3'>
+					<section>
+						<h1 class='white yuge'>HOW</h1>
+					</section>
+					<section>
+						<h3>Easy as 1-2-3!</h3>
+						<p class='fragment'>
+							1. Add angular js to your project.
+						</p>
+						<p class='fragment'>
+							2. Instantiate a module in your js
+						</p>
+						<pre class='fragment example'>
+							<code data-trim>
+								var app = angular.module('awesomeSauceApp', []);
+							</code>
+						</pre>
+						<p class='fragment'>
+							3. Add `ng-app`	attribute to html
+						</p>
+						<pre class='fragment example'>
+							<code data-trim>
+								&lt;body ng-app='awesomeSauceApp'&gt;
+								  &lt;!-- awesome sauce recipes --&gt;
+								&lt;/body&gt;
+							</code>
+						</pre>
+					</section>
+				</section>
+
 <!--
 
 				<section data-background-color='#265ba3'>
@@ -96,31 +161,6 @@
 				</section>
 
  -->
-				<section>
-					<section>
-						<h2>So we know frameworks.</h2>
-					</section>
-					<section>Ok, we know frameworks...</section>
-					<section>bits</section>
-					<section>bits</section>
-					<section>bits</section>
-					<section>legos</section>
-				</section>
-
-				<section>
-					<section>HOW</section>
-					<section>
-						<h3>Two lines to get started!</h3>
-						<p class='fragment'>with fragments</p>
-						<p class='fragment'>with fragments</p>
-						<p class='fragment'>with fragments</p>
-					</section>
-				</section>
-
-				<section>
-					RECAP:
-					AngularJS is a toolset to extend HTML.
-				</section>
 
 				<section>
 					<section>COMPONENTS</section>
