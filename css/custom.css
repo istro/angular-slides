@@ -1,7 +1,7 @@
 /* holman colors */
 
 .reveal .slides .white {
-  color: #f1f2ec
+  color: #f0f2eb
 }
 .reveal .slides .yellow {
   color: #cff564;
@@ -17,6 +17,21 @@
 }
 .reveal .slides .red {
   color: #fc4247;
+}
+.reveeal .slides .light-blue {
+  color: #3ec8ef;
+}
+.reveal .slides .dark-blue,
+.reveal .slides .dark-blue h2,
+.reveal .slides .dark-blue p {
+  color: #369abf;
+}
+
+.reveal section img {
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  margin: none;
 }
 
 .reveal .slides .subtitle {
@@ -34,7 +49,6 @@
   vertical-align: top;
 }
 
-
 .first h4 {
   margin-left: 150px;
   margin-top: -35px;
@@ -45,4 +59,22 @@
   bottom: 40px;
   right: 0;
   font-size: 70%;
+}
+
+.cons > div {
+  margin-top: -30%;
+}
+
+.cons .fragment,
+.proscons p,
+.proscons .fragment {
+  color: #eee8d5;
+  margin: 0;
+  text-align: left;
+  font-size: 80%;
+  margin-left: 30px;
+}
+
+.reveal .mt25 {
+  margin-top: 25px;
 }
