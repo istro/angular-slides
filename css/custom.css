@@ -1,0 +1,48 @@
+/* holman colors */
+
+.reveal .slides .white {
+  color: #f1f2ec
+}
+.reveal .slides .yellow {
+  color: #cff564;
+}
+.reveal .slides .green {
+  color: #8aa860;
+}
+.reveal .slides .gray {
+  color: #7a7a7a;
+}
+.reveal .slides .blue {
+  color: #3ec5f4;
+}
+.reveal .slides .red {
+  color: #fc4247;
+}
+
+.reveal .slides .subtitle {
+  font-size: 30%;
+}
+
+.first h1,
+.first h4 {
+  text-transform: none;
+  margin: 0;
+}
+
+.first h1 span {
+  font-size: 50%;
+  vertical-align: top;
+}
+
+
+.first h4 {
+  margin-left: 150px;
+  margin-top: -35px;
+}
+
+.first .footnote {
+  position: fixed;
+  bottom: 40px;
+  right: 0;
+  font-size: 70%;
+}
