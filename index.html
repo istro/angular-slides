@@ -1,499 +1,667 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Angular 1.x overview</title>
+    <title>Angular 1.x overview</title>
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/moon.css">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/moon.css">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<link rel="stylesheet" href="css/remark.css">
-		<link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/remark.css">
+    <link rel="stylesheet" href="css/custom.css">
 
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
 
-				<section>
-					<h3>Slideshow made with <a href='https://github.com/hakimel/reveal.js/'>RevealJS</a>.</h3>
-					<h4>Quick tips:</h4>
-					<ul>
-						<li>Arrows for navigation</li>
-						<li>"O" for overview</li>
-						<li>"S" for speaker notes</li>
-					</ul>
-					<aside class='notes'>
-						Great job! You now see speaker notes too.
-					</aside>
-				</section>
+        <section>
+          <h3>Slideshow made with <a href='https://github.com/hakimel/reveal.js/'>RevealJS</a>.</h3>
+          <h4>Quick tips:</h4>
+          <ul>
+            <li>Arrows for navigation</li>
+            <li>"O" for overview</li>
+            <li>"S" for speaker notes</li>
+          </ul>
+          <aside class='notes'>
+            Great job! You now see speaker notes too.
+          </aside>
+        </section>
 
-				<section data-background-color='#ff4342' class='first'>
-					<h1>AngularJS<span>*</span></h1>
-					<h4 class='yellow'>toolset to extend HTML</h4>
-					<p class='fragment'>
-						<span class='footnote white'>* version 1.x</span>
-					</p>
-					<aside class='notes'>
-						Docs definition: AngularJS is a toolset for building the framework most suited to your application development
-					</aside>
-				</section>
+        <section data-background-color='#ff4342' class='first'>
+          <h1>AngularJS<span>*</span></h1>
+          <h4 class='yellow'>toolset to extend HTML</h4>
+          <p class='fragment'>
+            <span class='footnote white'>* version 1.x</span>
+          </p>
+          <aside class='notes'>
+            Docs definition: AngularJS is a toolset for building the framework most suited to your application development
+          </aside>
+        </section>
 
-				<section data-background-color='#265ba3'>
-					<section>
-						<h1 class='white yuge'>WHY</h1>
-						<aside class='notes'>
-							- As front-end needs rise, more JS is harder to manage<br>
-							- Bring engineering best practices to the front-end code<br>
-							- Maintainability
-						</aside>
-					</section>
-					<section class='cons' data-background-color='#369abf' data-transition='slide-in fade-out'>
-						<div>
-							<h2>Cons</h2>
-							<p class='fragment'>- Paradigm change about markup</p>
-							<p class='fragment'>- Unintuitive to debug when unfamiliar</p>
-							<p class='fragment'>- Need to have a good handle on prototypal inheritance</p>
-						</div>
-					</section>
-					<section class='proscons' data-background-color='#3ec8ef' data-transition='fade'>
-						<div class='dark-blue'>
-							<h2>Cons</h2>
-							<p>- Paradigm change about markup</p>
-							<p>- Unintuitive to debug when unfamiliar</p>
-							<p>- Need to have a good handle on prototypal inheritance</p>
-						</div>
-						<h2 class='mt25'>Pros</h2>
-						<p class='fragment'>- Easy to get started & onboard new engineers</p>
-						<p class='fragment'>- Quicker implementation of complex features</p>
-						<p class='fragment'>- It's a google project (long-term support)</p>
-						<p class='fragment'>- Great testability</p>
-					</section>
-				</section>
+        <section data-background-color='#265ba3'>
+          <section>
+            <h1 class='white yuge'>WHY</h1>
+            <aside class='notes'>
+              - As front-end needs rise, more JS is harder to manage<br>
+              - Bring engineering best practices to the front-end code<br>
+              - Maintainability
+            </aside>
+          </section>
+          <section class='cons' data-background-color='#369abf' data-transition='slide-in fade-out'>
+            <div>
+              <h2>Cons</h2>
+              <p class='fragment'>- Paradigm change about markup</p>
+              <p class='fragment'>- Unintuitive to debug when unfamiliar</p>
+              <p class='fragment'>- Need to have a good handle on prototypal inheritance</p>
+            </div>
+          </section>
+          <section class='proscons' data-background-color='#3ec8ef' data-transition='fade'>
+            <div class='dark-blue'>
+              <h2>Cons</h2>
+              <p>- Paradigm change about markup</p>
+              <p>- Unintuitive to debug when unfamiliar</p>
+              <p>- Need to have a good handle on prototypal inheritance</p>
+            </div>
+            <h2 class='mt25'>Pros</h2>
+            <p class='fragment'>- Easy to get started & onboard new engineers</p>
+            <p class='fragment'>- Quicker implementation of complex features</p>
+            <p class='fragment'>- It's a google project (long-term support)</p>
+            <p class='fragment'>- Great testability</p>
+          </section>
+        </section>
 
-				<section>
-					<section>
-						<h2>So we know frameworks.</h2>
-					</section>
-					<section data-background-image='img/rails.jpg'>
-						<aside class='notes'>Frameworks have components</aside>
-					</section>
-					<section data-background-image='img/rails2.jpg'>
-						<aside class='notes'>And other components</aside>
-					</section>
-					<section data-background-image='img/rails3.jpg'>
-						<aside class='notes'>And they fit together a certain way</aside>
-					</section>
-					<section data-background-image='img/fanciness.gif'>
-						<aside class='notes'>They abstract away complexity</aside>
-					</section>
-					<section data-background-image='img/snowy.gif'>
-						<aside class='notes'>Once we know how they fit together, we'll know how it works</aside>
-					</section>
-					<section data-background-color='#f0f2eb'>
-						<h2 class='dark-blue'>Isn't angular somewhat like that?</h2>
-					</section>
-					<section data-background-image='img/legos.jpg'>
-						<p class='fragment h3 dark-blue top'>Nope. It's more like a pile of legos.</p>
-					</section>
-				</section>
+        <section>
+          <section>
+            <h2>So we know frameworks.</h2>
+          </section>
+          <section data-background-image='img/rails.jpg'>
+            <aside class='notes'>Frameworks have components</aside>
+          </section>
+          <section data-background-image='img/rails2.jpg'>
+            <aside class='notes'>And other components</aside>
+          </section>
+          <section data-background-image='img/rails3.jpg'>
+            <aside class='notes'>And they fit together a certain way</aside>
+          </section>
+          <section data-background-image='img/fanciness.gif'>
+            <aside class='notes'>They abstract away complexity</aside>
+          </section>
+          <section data-background-image='img/snowy.gif'>
+            <aside class='notes'>Once we know how they fit together, we'll know how it works</aside>
+          </section>
+          <section data-background-color='#f0f2eb'>
+            <h2 class='dark-blue'>Isn't angular somewhat like that?</h2>
+          </section>
+          <section data-background-image='img/legos.jpg'>
+            <p class='fragment h3 dark-blue top'>Nope. It's more like a pile of legos.</p>
+          </section>
+        </section>
 
-				<section class='recap' data-background-color='#8aa860' data-transition='zoom-in slide-out'>
-					<h3>AngularJS is a</h3>
-					<h1 class='dark-red'>toolset</h1>
-					<h3 class='no-transform'>to extend HTML</h3>
-					<p class='fragment corner-ribbon'>RECAP</p>
-				</section>
+        <section class='recap' data-background-color='#8aa860' data-transition='zoom-in slide-out'>
+          <h3>AngularJS is a</h3>
+          <h1 class='dark-red'>toolset</h1>
+          <h3 class='no-transform'>to extend HTML</h3>
+          <p class='fragment corner-ribbon'>RECAP</p>
+        </section>
 
-				<section class='how' data-background-color='#265ba3'>
-					<section>
-						<h1 class='white yuge'>HOW</h1>
-					</section>
-					<section>
-						<h3>Easy as 1-2-3!</h3>
-						<p class='fragment'>
-							1. Add angular js to your project.
-						</p>
-						<p class='fragment'>
-							2. Instantiate a module in your js
-						</p>
-						<pre class='fragment example'>
-							<code data-trim>
-								var app = angular.module('awesomeSauceApp', []);
-							</code>
-						</pre>
-						<p class='fragment'>
-							3. Add `ng-app`	attribute to html
-						</p>
-						<pre class='fragment example'>
-							<code data-trim>
-								&lt;body ng-app='awesomeSauceApp'&gt;
-								  &lt;!-- awesome sauce recipes --&gt;
-								&lt;/body&gt;
-							</code>
-						</pre>
-					</section>
-				</section>
+        <section class='how' data-background-color='#265ba3'>
+          <section>
+            <h1 class='white yuge'>HOW</h1>
+          </section>
+          <section>
+            <h3>Easy as 1-2-3!</h3>
+            <p class='fragment'>
+              1. Add angular js to your project.
+            </p>
+            <p class='fragment'>
+              2. Instantiate a module in your js
+            </p>
+            <pre class='fragment example'>
+              <code data-trim>
+                var app = angular.module('awesomeSauceApp', []);
+              </code>
+            </pre>
+            <p class='fragment'>
+              3. Add `ng-app` attribute to html
+            </p>
+            <pre class='fragment example'>
+              <code data-trim>
+                &lt;body ng-app='awesomeSauceApp'&gt;
+                  &lt;!-- awesome sauce recipes --&gt;
+                &lt;/body&gt;
+              </code>
+            </pre>
+          </section>
+        </section>
 
-				<section>
-					<section data-background-color='#fff'>
-						<h2 class='dark-red'>COMPONENT TYPES</h2>
-						<img src='img/legos2.jpg'>
-					</section>
-					<section class='components' data-background-color='#fff'>
-						<h3 class='bg-green'>views</h3>
-						<p class='fragment h3 bg-blue'>controllers</p>
-						<p class='fragment h3 bg-red'>directives</p>
-						<p class='fragment h3 bg-purple'>services</p>
-						<p class='fragment small'>
-							There are a few more, and more details - check out official <a href='https://docs.angularjs.org/guide/concepts'>conceptual overview</a>
-						</p>
-						<aside class='notes'>
-							- views = represent visible part of the application, declare bindings & directives<br>
-							- ctrls = Responsible for setting up the scope, all view-related logic & interactions<br>
-							- dirs = DOM manipulation, receive view events, could be pretty complicated<br>
-							- serv = Handle non-view logic, communicate with the server, hold data & state<br>
-						</aside>
-					</section>
-				</section>
+        <section>
+          <section data-background-color='#fff'>
+            <h2 class='dark-red'>COMPONENT TYPES</h2>
+            <img src='img/legos2.jpg'>
+          </section>
+          <section class='components' data-background-color='#fff'>
+            <h3 class='bg-green'>views</h3>
+            <p class='fragment h3 bg-blue'>controllers</p>
+            <p class='fragment h3 bg-purple'>directives</p>
+            <p class='fragment h3 bg-orange'>services</p>
+            <p class='fragment small'>
+              There are a few more, and more details - check out official <a href='https://docs.angularjs.org/guide/concepts'>conceptual overview</a>
+            </p>
+            <aside class='notes'>
+              - views = represent visible part of the application, declare bindings & directives<br>
+              - ctrls = Responsible for setting up the scope, all view-related logic & interactions<br>
+              - dirs = DOM manipulation, receive view events, could be pretty complicated<br>
+              - serv = Handle non-view logic, communicate with the server, hold data & state<br>
+            </aside>
+          </section>
+        </section>
 
-				<section class='views'>
-					<section class='white' data-background-color='#33e089'>
-						<h1 class='yuge'>VIEWS</h1>
-						<p class='fragment'>represent visible part of the application</p>
-						<p class='fragment'>declare bindings & directives</p>
-						<aside class='notes'>all other components are JS functions, views are html on steroids.</aside>
-					</section>
-					<section data-background-color='#fff'>
-						<h3 class='blue'>
-							Example:
-							<img class='fr' src='img/puker.png'>
-						</h3>
-						<pre>
-							<code data-trim>
-							&lt;body ng-app='mhTrackerList'&gt;
-							  &lt;mh-navbar&gt;&lt;/mh-navbar&gt;
-							  &lt;div ng-controller='MainCtrl'&gt;
-							    Here is a list of trackers for {{ user.name }}
-							    &lt;div class='container'&gt;
-							      &lt;mh-fancy-frame ng-repeat=&quot;tracker in trackers | filter:q as results&quot;&gt;
-							        &lt;div class='mh-user-tracker' data-tracker='tracker'&gt;&lt;/div&gt;
-							      &lt;/mh-fancy-frame&gt;
-							    &lt;/div&gt;
-							  &lt;/div&gt;
-							  &lt;footer ng-include=&quot;'footer.html'&quot;&gt;&lt;/footer&gt;
-							&lt;/body&gt;
-							</code>
-						</pre>
-						<p class='fragment small text-left'>
-							- Looking at a template, it shouldn't feel cluttered and should give you an idea of what the app does (without details of implementation) <br><br>
-							- Think declaratively: set state in JS, hide/show bits based on state (as opposed to controller manipulating DOM directly)
-						</p>
-						<aside class='notes'>
-							Paradigm change: angularJS views not only represent layout (as html typically does), they also represent what different parts of the page do
-						</aside>
-					</section>
-				</section>
+        <section class='views'>
+          <section class='white' data-background-color='#33e089'>
+            <h1 class='yuge'>VIEWS</h1>
+            <p class='fragment'>represent visible part of the application</p>
+            <p class='fragment'>declare bindings & directives</p>
+            <aside class='notes'>all other components are JS functions, views are html on steroids.</aside>
+          </section>
+          <section data-background-color='#fff'>
+            <h3 class='blue'>
+              Example:
+              <img class='fr' src='img/puker.png'>
+            </h3>
+            <pre>
+              <code data-trim>
+              &lt;body ng-app='mhTrackerList'&gt;
+                &lt;mh-navbar&gt;&lt;/mh-navbar&gt;
+                &lt;div ng-controller='MainCtrl'&gt;
+                  Here is a list of trackers for {{ user.name }}
+                  &lt;div class='container'&gt;
+                    &lt;mh-fancy-frame ng-repeat=&quot;tracker in trackers | filter:q as results&quot;&gt;
+                      &lt;div class='mh-user-tracker' data-tracker='tracker'&gt;&lt;/div&gt;
+                    &lt;/mh-fancy-frame&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;footer ng-include=&quot;'footer.html'&quot;&gt;&lt;/footer&gt;
+              &lt;/body&gt;
+              </code>
+            </pre>
+            <p class='fragment small text-left'>
+              - Looking at a template, it shouldn't feel cluttered and should give you an idea of what the app does (without details of implementation) <br><br>
+              - Think declaratively: set state in JS, hide/show bits based on state (as opposed to controller manipulating DOM directly)
+            </p>
+            <aside class='notes'>
+              Paradigm change: angularJS views not only represent layout (as html typically does), they also represent what different parts of the page do
+            </aside>
+          </section>
+        </section>
 
-				<section>
-					<section data-background-color='#ff4342'>
-						<h3 class='no-transform concept'>concept:</h3>
-						<h1 class='no-transform'>$scope</h1>
+        <section>
+          <section data-background-color='#ff4342'>
+            <h3 class='no-transform concept'>concept:</h3>
+            <h1 class='no-transform'>$scope</h1>
 
-						<aside class='notes'>
-							- JS context on a particular angular-empowered html element.<br>
-							- AngularJS sets up prototypal inheritance between scopes of elements according to their structure in the DOM (unless you tell it not to, see directives slide).
-						</aside>
-					</section>
+            <aside class='notes'>
+              - JS context on a particular angular-empowered html element.<br>
+              - AngularJS sets up prototypal inheritance between scopes of elements according to their structure in the DOM (unless you tell it not to, see directives slide).
+            </aside>
+          </section>
 
-					<section data-background="http://i.giphy.com/90F8aUepslB84.gif"></section>
+          <section data-background="http://i.giphy.com/90F8aUepslB84.gif"></section>
 
-					<section data-background-color='#fff'>
-						<img src='img/scopes.png'>
-						<p class='fragment small'>
-							Think of it as jQuery
-							<code class='remark-inline-code'>$(element).data()</code> on steroids.<br>
-							It belongs to a single html element - and one element only has one <code class='remark-inline-code'>$scope</code>.<br><br>
-							<span class='small'><a href='https://docs.angularjs.org/guide/scope'>Docs</a> have a pretty good overview & examples of <code class='remark-inline-code'>$scope</code></span>
-						</p>
-						<aside class='notes'>
-							$rootScope is just the top-level $scope. It is available to be injected in any component.
-						</aside>
-					</section>
+          <section data-background-color='#fff'>
+            <img src='img/scopes.png'>
+            <p class='fragment small'>
+              Think of it as jQuery
+              <code class='remark-inline-code'>$(element).data()</code> on steroids.<br>
+              It belongs to a single html element - and one element only has one <code class='remark-inline-code'>$scope</code>.<br><br>
+              <span class='small'><a href='https://docs.angularjs.org/guide/scope'>Docs</a> have a pretty good overview & examples of <code class='remark-inline-code'>$scope</code></span>
+            </p>
+            <aside class='notes'>
+              $rootScope is just the top-level $scope. It is available to be injected in any component.
+            </aside>
+          </section>
 
-					<section class='debugging small' data-background-color='#fff'>
-						<h2 class='dark-blue'>debugging tips:</h2>
-						<p>you can easily access any scope in JS console, like so:</p>
-						<pre>
-							<code data-trim>
-								// First, select element in elements panel. Then, in JS console:
+          <section class='debugging small' data-background-color='#fff'>
+            <h2 class='dark-blue'>debugging tips:</h2>
+            <p>you can easily access any scope in JS console, like so:</p>
+            <pre>
+              <code data-trim>
+                // First, select element in elements panel. Then, in JS console:
 
-								$0                          // => element itself
-								angular.element($0).scope() // => associated scope, if there is one
-							</code>
-						</pre>
-						<p>Also, <a href='https://github.com/angular/batarang'>web inspector</a> plugin for chrome is pretty handy.</p>
-					</section>
-				</section>
+                $0                          // => element itself
+                angular.element($0).scope() // => associated scope, if there is one
+              </code>
+            </pre>
+            <p>Also, <a href='https://github.com/angular/batarang'>web inspector</a> plugin for chrome is pretty handy.</p>
+          </section>
+        </section>
 
-				<section class='recap' data-background-color='#8aa860' data-transition='zoom-in slide-out'>
-					<h1 class='dark-red no-transform'>$scope <span class='small'>is</span></h1>
-					<h3 class='no-transform'>JS context of an</h3>
-					<h3 class='no-transform'>angular element</h3>
-					<p class='fragment corner-ribbon'>RECAP</p>
-					<aside class='notes'>
-					- each element has only one scope<br>
-						- $rootScope is context of `ng-app` element
-					</aside>
-				</section>
+        <section class='recap' data-background-color='#8aa860' data-transition='zoom-in slide-out'>
+          <h1 class='dark-red no-transform'>$scope <span class='small'>is</span></h1>
+          <h3 class='no-transform'>JS context of an</h3>
+          <h3 class='no-transform'>angular element</h3>
+          <p class='fragment corner-ribbon'>RECAP</p>
+          <aside class='notes'>
+          - each element has only one scope<br>
+            - $rootScope is context of `ng-app` element
+          </aside>
+        </section>
 
-				<section class='ctrls'>
-					<section data-background-color='#265ba3'>
-						<h1 class='yuge'>CONTROLLERS</h1>
-						<aside class='notes'>
-							Controller is a JS function, saved in angular "controllers" pile - and can be reused in many places
-						</aside>
-					</section>
+        <section class='ctrls'>
+          <section data-background-color='#265ba3'>
+            <h1 class='yuge'>CONTROLLERS</h1>
+            <aside class='notes'>
+              Controller is a JS function, saved in angular "controllers" pile - and can be reused in many places
+            </aside>
+          </section>
 
-					<section data-background-color='#fff'>
-						<img src='img/controller.gif'>
-						<p class='fragment'>
-							set up the
-							<code class='remark-inline-code'>$scope</code>
-						</p>
-						<p class='fragment'>manage view interactions</p>
-						<p class='fragment'>give any existing html element superpowers</p>
-					</section>
+          <section data-background-color='#fff'>
+            <img src='img/controller.gif'>
+            <p class='fragment'>
+              set up the
+              <code class='remark-inline-code'>$scope</code>
+            </p>
+            <p class='fragment'>manage view interactions</p>
+            <p class='fragment'>give any existing html element superpowers</p>
+          </section>
 
-					<section class='example pull-up' data-background-color='#fff' data-transition='slide-in fade-out'>
-						<h3 class='blue'>
-							Example:
-							<img class='fr' src='img/woah.png'>
-						</h3>
-						<p class='small' >in JS, register a controller:</p>
-						<pre>
-							<code data-trim>
-								app.controller('SauceCtrl', function($scope) {
-								  $scope.flavor = 'Strawberry';
-								  $scope.tasteSauce = function() {
-								    // cause intense gastronomical pleasure
-								    console.log('Tasting happened.')
-								  }
-								});
-							</code>
-						</pre>
-						<p class='fragment small'>
-							Then in HTML, just add it with <code class='remark-inline-code'>ng-controller</code> tag:
-						</p>
-					</section>
-					<section class='example' data-background-color='#fff' data-transition='fade-in slide-out'>
-						<h3 class='blue'>
-							Example:
-							<img class='fr' src='img/woah.png'>
-						</h3>
-						<p class='small' >in JS, register a controller:</p>
-						<pre>
-							<code data-trim>
-								app.controller('SauceCtrl', function($scope) {
-								  $scope.flavor = 'Strawberry';
-								  $scope.tasteSauce = function() {
-								    // cause intense gastronomical pleasure
-								    console.log('Tasting happened.')
-								  }
-								});
-							</code>
-						</pre>
-						<p class='small'>
-							Then in HTML, just add it with <code class='remark-inline-code'>ng-controller</code> tag:
-						</p>
-						<pre>
-							<code data-trim>
-								&lt;div ng-controller='SauceCtrl'&gt;
-								  &lt;button ng-click='tasteSauce()'&gt;Taste {{ flavor }} Sauce&lt;/button&gt;
-								&lt;/div&gt;
-							</code>
-						</pre>
-					</section>
+          <section class='example pull-up' data-background-color='#fff' data-transition='slide-in fade-out'>
+            <h3 class='blue'>
+              Example:
+              <img class='fr' src='img/woah.png'>
+            </h3>
+            <p class='small' >in JS, register a controller:</p>
+            <pre>
+              <code data-trim>
+                app.controller('SauceCtrl', function($scope) {
+                  $scope.flavor = 'Strawberry';
+                  $scope.tasteSauce = function() {
+                    // cause intense gastronomical pleasure
+                    console.log('Tasting happened.')
+                  }
+                });
+              </code>
+            </pre>
+            <p class='fragment small'>
+              Then in HTML, just add it with <code class='remark-inline-code'>ng-controller</code> tag:
+            </p>
+          </section>
+          <section class='example' data-background-color='#fff' data-transition='fade-in slide-out'>
+            <h3 class='blue'>
+              Example:
+              <img class='fr' src='img/woah.png'>
+            </h3>
+            <p class='small' >in JS, register a controller:</p>
+            <pre>
+              <code data-trim>
+                app.controller('SauceCtrl', function($scope) {
+                  $scope.flavor = 'Strawberry';
+                  $scope.tasteSauce = function() {
+                    // cause intense gastronomical pleasure
+                    console.log('Tasting happened.')
+                  }
+                });
+              </code>
+            </pre>
+            <p class='small'>
+              Then in HTML, just add it with <code class='remark-inline-code'>ng-controller</code> tag:
+            </p>
+            <pre>
+              <code data-trim>
+                &lt;div ng-controller='SauceCtrl'&gt;
+                  &lt;button ng-click='tasteSauce()'&gt;Taste {{ flavor }} Sauce&lt;/button&gt;
+                &lt;/div&gt;
+              </code>
+            </pre>
+          </section>
 
-					<section class='codesmell' data-background-color='#fff'>
-						<h3 class='blue'>
-							controller code smell:
-							<img class='fr' src='img/yuno.png'>
-						</h3>
-						<ul>
-							<li>does it do more than just coordinate view & model?</li>
-							<li>does it have too many collaborators (dependencies)? Over 3 or 4 is too many (increases coupling).</li>
-							<li>is it testable? (would it need many mocks? would it be tricky to test because of DOM manipulation?)
-							</li>
-						</ul>
-						<br><br>
-						<img class='gnomes' src='img/gnomes.jpg'>
-						<h3 class='blue'>
-							Strategies to clean up:
-							<img class='fr' src='img/success.png'>
-						</h3>
-						<br>
-						<ul class='cleanup'>
-							<li>evaluate if controller is managing too big a chunk of the page & cut it up into smaller bits</li>
-							<li>create facade services that aggregate & abstract away the use of some dependencies necessary for a related task</li>
-						</ul>
-					</section>
-				</section>
+          <section class='codesmell' data-background-color='#fff'>
+            <h3 class='blue'>
+              controller code smell:
+              <img class='fr' src='img/yuno.png'>
+            </h3>
+            <ul>
+              <li>does it do more than just coordinate view & model?</li>
+              <li>does it have too many collaborators (dependencies)? Over 3 or 4 is too many (increases coupling).</li>
+              <li>is it testable? (would it need many mocks? would it be tricky to test because of DOM manipulation?)
+              </li>
+            </ul>
+            <br><br>
+            <img class='gnomes' src='img/gnomes.jpg'>
+            <h3 class='blue'>
+              Strategies to clean up:
+              <img class='fr' src='img/success.png'>
+            </h3>
+            <br>
+            <ul class='cleanup'>
+              <li>evaluate if controller is managing too big a chunk of the page & cut it up into smaller bits</li>
+              <li>create facade services that aggregate & abstract away the use of some dependencies necessary for a related task</li>
+            </ul>
+          </section>
+        </section>
 
-				<section class='ctrl-recap' data-background-color='#8aa860' data-transition='zoom-in slide-out'>
-					<h1 class='dark-red'>Controllers</h1>
-					<h2 class='no-transform dark-blue'>JS functions containing</h2>
-					<h2 class='no-transform'>user interaction logic</h2>
-					<p class='fragment corner-ribbon'>RECAP</p>
-				</section>
+        <section class='ctrl-recap' data-background-color='#8aa860' data-transition='zoom-in slide-out'>
+          <h1 class='dark-red'>Controllers</h1>
+          <h2 class='no-transform dark-blue'>JS functions containing</h2>
+          <h2 class='no-transform'>user interaction logic</h2>
+          <p class='fragment corner-ribbon'>RECAP</p>
+        </section>
+
+        <section class='depinj'>
+          <section data-background-color='#ff4342'>
+            <h3 class='no-transform concept'>concept:</h3>
+            <h1 class='no-transform'>dependency<br>injection</h1>
+            <p class='footnote fragment'>
+              <span class='white'>check out <a href='https://en.wikipedia.org/wiki/Dependency_injection'>wikipedia</a> for detailed description</span>
+            </p>
+
+            <aside class='notes'>
+              Pattern of supplying services (dependencies) to the client (dependant). In angularJS, when registering any function with angular module you can pass in dependencies as params.
+            </aside>
+          </section>
+
+          <section class='example pull-up' data-background-color='#fff' data-transition='slide-in fade-out'>
+            <h3 class='blue'>
+              Example:
+              <img class='fl' src='img/hardcore.png'>
+            </h3>
+            <p class='small text-left black' >MI6 might depend on built-in services like `$location` - and some custom ones:</p>
+            <pre>
+              <code data-trim>
+                angular.module('great_britain', [])
+                  .controller('MI6', function($location, unlimitedAmmo, teleportationService, astonMartinService) {
+                    // ...
+                  })
+              </code>
+            </pre>
+          </section>
+          <section class='example' data-background-color='#fff' data-transition='fade-in slide-out'>
+            <h3 class='blue'>
+              Example:
+              <img class='fl' src='img/hardcore.png'>
+            </h3>
+            <p class='small text-left black' >MI6 might depend on built-in services like `$location` - and some custom ones:</p>
+            <pre>
+              <code data-trim>
+                angular.module('great_britain', [])
+                  .controller('MI6', function($location, unlimitedAmmo, teleportationService, astonMartinService) {
+                    // ...
+                  })
+              </code>
+            </pre>
+            <h3 class='blue'>
+              Gotcha: minification can catch you out:
+            </h3>
+            <img class='fr syringe' src='img/syringe.jpg'>
+            <p class='small text-left black'>
+            With injected services, minifiers won't know to properly keep track variable names. There are a couple of options to make your code minifier-safe.
+            </p>
+            <p class='small text-left black'>
+            Check out the <a href='https://docs.angularjs.org/guide/di'>docs</a> & pick the syntax you prefer.
+
+Docs have a ton more info.</p>
+          </section>
+        </section>
+
+        <section class='dirs'>
+          <section data-background-color='#b666c6'>
+            <h1 class='yuge'>DIRECTIVES</h1>
+            <aside class='notes'>
+              Hooks into html to extend functionality.<br>
+              Custom tags / attributes<br>
+              classes/comments (less common)<br>
+              Uses: Add tidbits of functionality to existing html elements<br>
+              Uses: Encapsulate reusable components with associated logic<br>
+              Uses: Modify DOM based on some conditions
+            </aside>
+          </section>
+
+          <section class='pull-up-up' data-background-color="#fff" data-transition='slide-in fade-out'>
+            <h3 class='dark-blue'>Decorator directives</h3>
+            <p class='fragment subtitle'>give existing elements superpowers</p>
+            <aside class='notes'>
+              Examples: ng-show, ng-if.<br>
+              Typically custom attributes (html-valid with `data-`)
+            </aside>
+          </section>
+
+          <section class='pull-up' data-background-color="#fff" data-transition='fade'>
+            <h3 class='dark-blue'>Decorator directives</h3>
+            <p class='subtitle'>give existing elements superpowers</p>
+            <p class='small black'>suppose we want an easy way to replace everything with 'YO'</p>
+            <pre>
+              <code data-trim>
+              &lt;body yo&gt;
+                // all the things will get replaced with &quot;YO&quot;
+              &lt;/body&gt;
+              </code>
+            </pre>
+          </section>
+
+          <section data-background-color="#fff" data-transition='fade-in slide-out'>
+            <h3 class='dark-blue'>Decorator directives</h3>
+            <p class='subtitle'>give existing elements superpowers</p>
+            <p class='small black'>suppose we want an easy way to replace everything with 'YO'</p>
+            <pre>
+              <code data-trim>
+              &lt;body yo&gt;
+                // all the things will get replaced with &quot;YO&quot;
+              &lt;/body&gt;
+              </code>
+            </pre>
+
+            <p class='small black'>In JS, define the directive:</p>
+            <pre>
+              <code data-trim>
+              app.directive('yo', function() {
+                return {
+                  restrict: 'A',
+                  link: function(scope, element, attrs) {
+                    element.innerHTML = 'YO';
+                  }
+                }
+              })
+              </code>
+            </pre>
+            <p class='fragment small footnote'>There are actually two link functions, <a  href='https://www.undefinednull.com/2014/07/07/practical-guide-to-prelink-postlink-and-controller-methods-of-angular-directives/'>read on</a> for more info</p>
+            <aside class='notes'>
+              just a function which returns a config object<br>
+              link function in config object does the magic
+            </aside>
+          </section>
+
+          <section class='pull-up-up-comps' data-background-color="#fff" data-transition='slide-in fade-out'>
+            <h3 class='dark-blue'>Component directives</h3>
+            <p class='subtitle fragment'>reusable snippets of html + logic</p>
+            <aside class='notes'>
+              typically cystom tags (prefix with something!)<br>
+            </aside>
+          </section>
+
+          <section class='pull-up-comps' data-background-color="#fff" data-transition='fade'>
+
+            <h3 class='dark-blue'>Component directives</h3>
+            <p class='subtitle'>reusable snippets of html + logic</p>
+
+            <p class='small black'>suppose we want an easy way to add an annoying button to the page</p>
+            <pre>
+              <code data-trim>
+              &lt;annoy&gt;&lt;/annoy&gt;
+              </code>
+            </pre>
+            <aside class='notes'>
+              typically cystom tags (prefix with something!)<br>
+            </aside>
+          </section>
+
+          <section data-background-color="#fff" data-transition='fade-in slide-out'>
+
+            <h3 class='dark-blue'>Component directives</h3>
+            <p class='subtitle'>reusable snippets of html + logic</p>
+
+            <p class='small black'>suppose we want an easy way to add an annoying button to the page</p>
+            <pre>
+              <code data-trim>
+              &lt;annoy&gt;&lt;/annoy&gt;
+              </code>
+            </pre>
+
+            <p class='small black'>In JS, define the directive:</p>
+            <pre>
+              <code data-trim>
+              app.directive('annoy', function() {
+                return {
+                  restrict: 'E',
+                  template: '<button ng-hide="annoyed" ng-click="annoy()">ANNOY!</button>'
+                  controller: function($scope) {
+                    $scope.annoyed = false;
+                    $scope.annoy = function() {
+                      alert('you have been annoyed.');
+                      $scope.annoyed = true;
+                    };
+                  }
+                }
+              })
+              </code>
+            </pre>
+
+            <aside class='notes'>
+              multiple directives on single element<br>
+              template can be a link to file<br>
+              controller can have services injected at will<br>
+              controller can also be a named fn
+            </aside>
+          </section>
+
+          <section class='transclude' data-background-color='#b666c6'>
+            <h3 class='dark-blue'>Component directives: transclusion</h3>
+
+            <p class='small black'>"picture-frame" directives to surround some content with some other content.</p>
+
+            <pre>
+              <code data-trim>
+              app.directive('fancyFrame', function() {
+                return {
+                  restrict: 'E',
+                  template: '/templates/fancy_frame.html',
+                  transclude: true
+                }
+              })
+              </code>
+            </pre>
+
+            <p class='small black'>e.g. surround element with list tag:</p>
+            <pre>
+              <code data-trim>
+              &lt;li class='fancy-frame'&gt;
+                &lt;ng-transclude&gt;&lt;/ng-transclude&gt;
+              &lt;/li&gt;
+              </code>
+            </pre>
+            <aside class='notes'>
+              $scope gotcha: by default shared scope
+            </aside>
+          </section>
 
 <!--
-				<section data-background-color='#265ba3'>
+        <section data-background-color='#265ba3'>
 
-					<p class='fragment'></p>
+          <p class='fragment'></p>
 
-					<aside class='notes'>
+          <aside class='notes'>
 
-					</aside>
-				</section>
+          </aside>
+        </section>
  -->
-				<section class='depinj'>
-					<section data-background-color='#ff4342'>
-						<h3 class='no-transform concept'>concept:</h3>
-						<h1 class='no-transform'>dependency<br>injection</h1>
-						<p class='footnote fragment'>
-							<span class='white'>check out <a href='https://en.wikipedia.org/wiki/Dependency_injection'>wikipedia</a> for detailed description</span>
-						</p>
 
-						<aside class='notes'>
-							Pattern of supplying services (dependencies) to the client (dependant). In angularJS, when registering any function with angular module you can pass in dependencies as params.
-						</aside>
-					</section>
+          <section data-background-color="#fff">
+            <h3 class='dark-blue'>Structural directives</h3>
+            <p class='subtitle'>e.g. ng-repeat, ng-if</p>
+            <p class='fragment'>
+              <img src='https://media.giphy.com/media/10ECejNtM1GyRy/giphy.gif'>
+              <br>
+              ACTUALLY modify the DOM.
+            </p>
+          </section>
+        </section>
 
-					<section class='example pull-up' data-background-color='#fff' data-transition='slide-in fade-out'>
-						<h3 class='blue'>
-							Gotcha: minification can catch you out:
-						</h3>
-						<img class='fr syringe' src='img/syringe.jpg'>
-						<p class='small text-left black'>
-						With injected services, minifiers won't know to properly keep track variable names. There are a couple of options to make your code minifier-safe.
-						</p>
-						<p class='small text-left black'>
-						Check out the <a href='https://docs.angularjs.org/guide/di'>docs</a> & pick the syntax you prefer.
+        <section>
+          <section>Directives & $scope</section>
+          <section>shared</section>
+          <section>inherited</section>
+          <section>isolate</section>
+        </section>
 
-Docs have a ton more info.</p>
-					</section>
-					<section class='example' data-background-color='#fff' data-transition='fade-in slide-out'>
-						<h3 class='blue'>
-							Gotcha: minification can catch you out:
-						</h3>
-						<img class='fr syringe' src='img/syringe.jpg'>
-						<p class='small text-left black'>
-						With injected services, minifiers won't know to properly keep track variable names. There are a couple of options to make your code minifier-safe.
-						</p>
-						<p class='small text-left black'>
-						Check out the <a href='https://docs.angularjs.org/guide/di'>docs</a> & pick the syntax you prefer.
+        <section data-background-color='#8aa860' data-transition='zoom-in slide-out'>
+          RECAP:
+          Directives are ...
+        </section>
 
-Docs have a ton more info.</p>
-						<br>
-						<br>
-						<h3 class='blue'>
-							Example:
-							<img class='fl' src='img/hardcore.png'>
-						</h3>
-						<p class='small text-left black' >MI6 might depend on built-in services like `$location` - and some custom ones:</p>
-						<pre>
-							<code data-trim>
-								angular.module('great_britain', [])
-								  .controller('MI6', function($location, unlimitedAmmo, teleportationService, astonMartinService) {
-								    // ...
-								  })
-							</code>
-						</pre>
-					</section>
-				</section>
+        <section>
+          <section>concept: events in angularjs</section>
+          <section>
+            Example:
+            <p class='fragment'>subscribing</p>
+            <p class='fragment'>emitting</p>
+            <p class='fragment'>broadcasting</p>
+          </section>
+        </section>
 
+        <section>
+          <section>SERVICES</section>
+          <section>examples</section>
+        </section>
 
+        <section data-background-color='#8aa860' data-transition='zoom-in slide-out'>
+          RECAP:
+          Services are just functions.
+        </section>
 
+        <section>
+          <section>COMMUNICATION</section>
+          <section>via scope (pros, cons in notes)</section>
+          <section>via events (pros, cons in notes)</section>
+          <section>via services(pros, cons in notes)</section>
+        </section>
 
+        <section>
+          <section>File structure</section>
+          <section>examples, pros/cons</section>
+        </section>
 
+      </div>
+    </div>
 
-				<section>
-					<section>DIRECTIVES</section>
-					<section>examples of different types</section>
-					<section>dirs & scope</section>
-				</section>
+    <script src="lib/js/head.min.js"></script>
+    <script src="lib/js/reveal.min.js"></script>
 
-				<section>
-					<section>concept: events in angularjs</section>
-					<section>
-						Example:
-						<p class='fragment'>subscribing</p>
-						<p class='fragment'>emitting</p>
-						<p class='fragment'>broadcasting</p>
-					</section>
-				</section>
+    <script>
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        history: true,
 
-				<section data-background-color='#8aa860' data-transition='zoom-in slide-out'>
-					RECAP:
-					Directives are ...
-				</section>
-
-				<section>
-					<section>SERVICES</section>
-					<section>examples</section>
-				</section>
-
-				<section data-background-color='#8aa860' data-transition='zoom-in slide-out'>
-					RECAP:
-					Services are just functions.
-				</section>
-
-				<section>
-					<section>COMMUNICATION</section>
-					<section>via scope (pros, cons in notes)</section>
-					<section>via events (pros, cons in notes)</section>
-					<section>via services(pros, cons in notes)</section>
-				</section>
-
-				<section>
-					<section>File structure</section>
-					<section>examples, pros/cons</section>
-				</section>
-
-			</div>
-		</div>
-
-		<script src="lib/js/head.min.js"></script>
-		<script src="lib/js/reveal.min.js"></script>
-
-		<script>
-			// More info https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				history: true,
-
-				// More info https://github.com/hakimel/reveal.js#dependencies
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
-	</body>
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+          { src: 'plugin/markdown/marked.js' },
+          { src: 'plugin/markdown/markdown.js' },
+          { src: 'plugin/notes/notes.js', async: true },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+    </script>
+  </body>
 </html>

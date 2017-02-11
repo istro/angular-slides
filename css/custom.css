@@ -34,8 +34,8 @@
 .reveal .slides .bg-blue {
   background-color: #265ba3;
 }
-.reveal .slides .bg-red {
-  background-color: #fc4247;
+.reveal .slides .bg-orange {
+  background-color: #ff9800;
 }
 .reveal .slides .bg-purple {
   background-color: #b666c6;
@@ -289,11 +289,50 @@
 .reveal .slides .depinj pre {
   font-size: 35%;
 }
+
+.reveal .slides .dirs pre {
+  font-size: 45%;
+}
+
 .reveal .slides .depinj .pull-up {
-  margin-top: -168px
+  margin-top: -163px
 }
 
 .reveal .slides h3 img.fl {
   margin-right: -100px;
   margin-left: 40px;
+}
+
+.reveal .slides .dirs h3 {
+  margin: 0;
+  line-height: .8em;
+}
+
+.reveal .slides .dirs p {
+  margin-bottom: -10px;
+}
+
+.reveal .slides .dirs .subtitle {
+  font-size: 65%;
+  font-style: italic;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.reveal .slides .dirs .pull-up {
+  margin-top: -165px
+}
+.reveal .slides .dirs .pull-up-up {
+  margin-top: -245px
+}
+
+.reveal .slides .pull-up-comps {
+  margin-top: -195px
+}
+.reveal .slides .pull-up-up-comps {
+  margin-top: -252px
+}
+
+.reveal .slides .transclude {
+  background-color: #fff;
 }
