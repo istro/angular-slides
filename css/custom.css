@@ -24,6 +24,21 @@
 .reveeal .slides .light-blue {
   color: #3ec8ef;
 }
+
+.reveal .slides .bg-green {
+  background-color: #33e089;
+}
+.reveal .slides .bg-blue {
+  background-color: #265ba3;
+}
+.reveal .slides .bg-red {
+  background-color: #fc4247;
+}
+.reveal .slides .bg-purple {
+  background-color: #b666c6;
+}
+
+
 .reveal .slides .dark-blue,
 .reveal .slides .dark-blue h2,
 .reveal .slides .dark-blue p {
@@ -32,6 +47,10 @@
 
 .reveal .slides .no-transform {
   text-transform: none;
+}
+
+.reveal .slides .text-left {
+  text-align: left;
 }
 
 .reveal .slides .yuge {
@@ -132,11 +151,15 @@
   font-size: 2em;
 }
 
+.reveal .slides .small {
+  font-size: 60%;
+}
+
 .reveal .slides .how .fragment {
   color: #f0f2eb;
 }
 
-.reveal .slides .how .fragment.example {
+.reveal .slides pre {
   font-size: 50%;
   box-shadow: none;
   padding: 0;
@@ -148,4 +171,34 @@
   position: absolute;
   width: 100%;
   top: 0;
+}
+
+.reveal .slides .components h3,
+.reveal .slides .components .h3 {
+  color: #fff;
+  padding: 20px;
+}
+
+.reveal .slides .debugging pre,
+.reveal .slides .views pre {
+  font-size: 40%;
+}
+
+.reveal .slides .views img {
+  position: absolute;
+  right: 5%;
+}
+
+.reveal .slides .views .fragment {
+  margin: 20px 10%;
+}
+
+.reveal .slides .concept {
+  margin: 0;
+  padding-left: 60px;
+  font-style: italic;
+  color: #bf3433;
+  position: relative;
+  top: 35px;
+  letter-spacing: 10px;
 }

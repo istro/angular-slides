@@ -149,6 +149,66 @@
 					</section>
 				</section>
 
+				<section>
+					<section data-background-color='#fff'>
+						<h2 class='dark-red'>COMPONENT TYPES</h2>
+						<img src='img/legos2.jpg'>
+					</section>
+					<section class='components' data-background-color='#fff'>
+						<h3 class='bg-green'>views</h3>
+						<p class='fragment h3 bg-blue'>controllers</p>
+						<p class='fragment h3 bg-red'>directives</p>
+						<p class='fragment h3 bg-purple'>services</p>
+						<p class='fragment small'>
+							There are a few more, and more details - check out official <a href='https://docs.angularjs.org/guide/concepts'>conceptual overview</a>
+						</p>
+						<aside class='notes'>
+							- views = represent visible part of the application, declare bindings & directives<br>
+							- ctrls = Responsible for setting up the scope, all view-related logic & interactions<br>
+							- dirs = DOM manipulation, receive view events, could be pretty complicated<br>
+							- serv = Handle non-view logic, communicate with the server, hold data & state<br>
+						</aside>
+					</section>
+				</section>
+
+				<section class='views'>
+					<section class='white' data-background-color='#33e089'>
+						<h1 class='yuge'>VIEWS</h1>
+						<p class='fragment'>represent visible part of the application</p>
+						<p class='fragment'>declare bindings & directives</p>
+					</section>
+					<section data-background-color='#fff'>
+						<h3 class='blue'>
+							Example:
+							<img class='fr' src='img/puker.png'>
+						</h3>
+						<pre>
+							<code data-trim>
+							&lt;body ng-app='mhTrackerList'&gt;
+							  &lt;mh-navbar&gt;&lt;/mh-navbar&gt;
+							  &lt;div ng-controller='MainCtrl'&gt;
+							    Here is a list of trackers for {{ user.name }}
+							    &lt;div class='container'&gt;
+							      &lt;mh-fancy-frame ng-repeat=&quot;tracker in trackers | filter:q as results&quot;&gt;
+							        &lt;div class='mh-user-tracker' data-tracker='tracker'&gt;&lt;/div&gt;
+							      &lt;/mh-fancy-frame&gt;
+							    &lt;/div&gt;
+							  &lt;/div&gt;
+							  &lt;footer ng-include=&quot;'footer.html'&quot;&gt;&lt;/footer&gt;
+							&lt;/body&gt;
+							</code>
+						</pre>
+						<p class='fragment small text-left'>
+							- Looking at a template, it shouldn't feel cluttered and should give you an idea of what the app does (without details of implementation) <br><br>
+							- Think declaratively: set state in JS, hide/show bits based on state (as opposed to controller manipulating DOM directly)
+						</p>
+						<aside class='notes'>
+							Paradigm change: angularJS views not only represent layout (as html typically does), they also represent what different parts of the page do
+						</aside>
+					</section>
+				</section>
+
+
 <!--
 
 				<section data-background-color='#265ba3'>
@@ -162,36 +222,58 @@
 
  -->
 
-				<section>
-					<section>COMPONENTS</section>
-					<section>
-						<p class='fragment'>views</p>
-						<p class='fragment'>controllers</p>
-						<p class='fragment'>directives</p>
-						<p class='fragment'>services</p>
-						<p class='fragment'>more, link to docs</p>
-					</section>
-				</section>
 
 				<section>
-					<section>VIEWS</section>
-					<section>Example</section>
-				</section>
 
-				<section>
-					<section>
-						concept: $scope
+					<section data-background-color='#ff4342'>
+						<h3 class='no-transform concept'>concept:</h3>
+						<h1 class='no-transform'>$scope</h1>
+
 						<aside class='notes'>
-							mention prototypal inheritance, demo if necessary
+							- JS context on a particular angular-empowered html element.<br>
+							- AngularJS sets up prototypal inheritance between scopes of elements according to their structure in the DOM (unless you tell it not to, see directives slide).
 						</aside>
 					</section>
-					<section>example pic</section>
-					<section>debugging tip</section>
+
+					<section data-background="http://i.giphy.com/90F8aUepslB84.gif"></section>
+
+					<section data-background-color='#fff'>
+						<img src='img/scopes.png'>
+						<p class='fragment small'>
+							Think of it as jQuery
+							<code class='remark-inline-code'>$(element).data()</code> on steroids.<br>
+							It belongs to a single html element - and one element only has one <code class='remark-inline-code'>$scope</code>.<br><br>
+							<span class='small'><a href='https://docs.angularjs.org/guide/scope'>Docs</a> have a pretty good overview & examples of <code class='remark-inline-code'>$scope</code></span>
+						</p>
+						<aside class='notes'>
+							$rootScope is just the top-level $scope. It is available to be injected in any component.
+						</aside>
+					</section>
+
+					<section class='debugging small' data-background-color='#fff'>
+						<h2 class='dark-blue'>debugging tips:</h2>
+						<p>you can easily access any scope in JS console, like so:</p>
+						<pre>
+							<code data-trim>
+								// First, select element in elements panel. Then, in JS console:
+
+								$0                          // => element itself
+								angular.element($0).scope() // => associated scope, if there is one
+							</code>
+						</pre>
+						<p>Also, <a href='https://github.com/angular/batarang'>web inspector</a> plugin for chrome is pretty handy.</p>
+					</section>
 				</section>
 
-				<section>
-					RECAP:
-					$scope is ..., an html element can have only one
+				<section class='recap' data-background-color='#8aa860' data-transition='zoom-in slide-out'>
+					<div class='corner-ribbon'>RECAP</div>
+					<h1 class='dark-red'>$scope is</h1>
+					<h3 class='no-transform'>JS context of an</h3>
+					<h3 class='no-transform'>angular element</h3>
+					<aside class='notes'>
+					- each element has only one scope<br>
+						- $rootScope is context of `ng-app` element
+					</aside>
 				</section>
 
 				<section>
@@ -241,6 +323,11 @@
 					<section>via scope (pros, cons in notes)</section>
 					<section>via events (pros, cons in notes)</section>
 					<section>via services(pros, cons in notes)</section>
+				</section>
+
+				<section>
+					<section>File structure</section>
+					<section>examples, pros/cons</section>
 				</section>
 
 			</div>
