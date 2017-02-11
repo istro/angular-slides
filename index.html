@@ -113,10 +113,10 @@
 				</section>
 
 				<section class='recap' data-background-color='#8aa860' data-transition='zoom-in slide-out'>
-					<div class='corner-ribbon'>RECAP</div>
 					<h3>AngularJS is a</h3>
 					<h1 class='dark-red'>toolset</h1>
 					<h3 class='no-transform'>to extend HTML</h3>
+					<p class='fragment corner-ribbon'>RECAP</p>
 				</section>
 
 				<section class='how' data-background-color='#265ba3'>
@@ -176,6 +176,7 @@
 						<h1 class='yuge'>VIEWS</h1>
 						<p class='fragment'>represent visible part of the application</p>
 						<p class='fragment'>declare bindings & directives</p>
+						<aside class='notes'>all other components are JS functions, views are html on steroids.</aside>
 					</section>
 					<section data-background-color='#fff'>
 						<h3 class='blue'>
@@ -208,23 +209,7 @@
 					</section>
 				</section>
 
-
-<!--
-
-				<section data-background-color='#265ba3'>
-
-					<p class='fragment'></p>
-
-					<aside class='notes'>
-
-					</aside>
-				</section>
-
- -->
-
-
 				<section>
-
 					<section data-background-color='#ff4342'>
 						<h3 class='no-transform concept'>concept:</h3>
 						<h1 class='no-transform'>$scope</h1>
@@ -266,25 +251,129 @@
 				</section>
 
 				<section class='recap' data-background-color='#8aa860' data-transition='zoom-in slide-out'>
-					<div class='corner-ribbon'>RECAP</div>
-					<h1 class='dark-red'>$scope is</h1>
+					<h1 class='dark-red no-transform'>$scope <span class='small'>is</span></h1>
 					<h3 class='no-transform'>JS context of an</h3>
 					<h3 class='no-transform'>angular element</h3>
+					<p class='fragment corner-ribbon'>RECAP</p>
 					<aside class='notes'>
 					- each element has only one scope<br>
 						- $rootScope is context of `ng-app` element
 					</aside>
 				</section>
 
-				<section>
-					<section>CONTROLLERS</section>
-					<section>basic example with html & js</section>
-					<section>example with $scope (only JS)</section>
+				<section class='ctrls'>
+					<section data-background-color='#265ba3'>
+						<h1 class='yuge'>CONTROLLERS</h1>
+						<aside class='notes'>
+							Controller is a JS function, saved in angular "controllers" pile - and can be reused in many places
+						</aside>
+					</section>
+
+					<section data-background-color='#fff'>
+						<img src='img/controller.gif'>
+						<p class='fragment'>
+							set up the
+							<code class='remark-inline-code'>$scope</code>
+						</p>
+						<p class='fragment'>manage view interactions</p>
+						<p class='fragment'>give any existing html element superpowers</p>
+					</section>
+
+					<section class='example pull-up' data-background-color='#fff' data-transition='slide-in fade-out'>
+						<h3 class='blue'>
+							Example:
+							<img class='fr' src='img/woah.png'>
+						</h3>
+						<p class='small' >in JS, register a controller:</p>
+						<pre>
+							<code data-trim>
+								app.controller('SauceCtrl', function($scope) {
+								  $scope.flavor = 'Strawberry';
+								  $scope.tasteSauce = function() {
+								    // cause intense gastronomical pleasure
+								    console.log('Tasting happened.')
+								  }
+								});
+							</code>
+						</pre>
+						<p class='fragment small'>
+							Then in HTML, just add it with <code class='remark-inline-code'>ng-controller</code> tag:
+						</p>
+					</section>
+					<section class='example' data-background-color='#fff' data-transition='fade-in slide-out'>
+						<h3 class='blue'>
+							Example:
+							<img class='fr' src='img/woah.png'>
+						</h3>
+						<p class='small' >in JS, register a controller:</p>
+						<pre>
+							<code data-trim>
+								app.controller('SauceCtrl', function($scope) {
+								  $scope.flavor = 'Strawberry';
+								  $scope.tasteSauce = function() {
+								    // cause intense gastronomical pleasure
+								    console.log('Tasting happened.')
+								  }
+								});
+							</code>
+						</pre>
+						<p class='small'>
+							Then in HTML, just add it with <code class='remark-inline-code'>ng-controller</code> tag:
+						</p>
+						<pre>
+							<code data-trim>
+								&lt;div ng-controller='SauceCtrl'&gt;
+								  &lt;button ng-click='tasteSauce()'&gt;Taste {{ flavor }} Sauce&lt;/button&gt;
+								&lt;/div&gt;
+							</code>
+						</pre>
+					</section>
+
+					<section class='codesmell' data-background-color='#fff'>
+						<h3 class='blue'>
+							controller code smell:
+							<img class='fr' src='img/yuno.png'>
+						</h3>
+						<ul>
+							<li>does it do more than just coordinate view & model?</li>
+							<li>does it have too many collaborators (dependencies)? Over 3 or 4 is too many (increases coupling).</li>
+							<li>is it testable? (would it need many mocks? would it be tricky to test because of DOM manipulation?)
+							</li>
+						</ul>
+						<br><br>
+						<img class='gnomes' src='img/gnomes.jpg'>
+						<h3 class='blue'>
+							Strategies to clean up:
+							<img class='fr' src='img/success.png'>
+						</h3>
+						<br>
+						<ul class='cleanup'>
+							<li>evaluate if controller is managing too big a chunk of the page & cut it up into smaller bits</li>
+							<li>create facade services that aggregate & abstract away the use of some dependencies necessary for a related task</li>
+						</ul>
+					</section>
+				</section>
+<!--
+
+				<section data-background-color='#265ba3'>
+
+					<p class='fragment'></p>
+
+					<aside class='notes'>
+
+					</aside>
+				</section>
+
+ -->
+				<section class='ctrl-recap' data-background-color='#8aa860' data-transition='zoom-in slide-out'>
+					<h1 class='dark-red'>Controllers</h1>
+					<h2 class='no-transform dark-blue'>JS functions containing</h2>
+					<h2 class='no-transform'>user interaction logic</h2>
+					<p class='fragment corner-ribbon'>RECAP</p>
 				</section>
 
 				<section>
-					RECAP:
-					controllers & their responsibilities
+					concept: dependency injection
 				</section>
 
 				<section>
@@ -303,7 +392,7 @@
 					</section>
 				</section>
 
-				<section>
+				<section data-background-color='#8aa860' data-transition='zoom-in slide-out'>
 					RECAP:
 					Directives are ...
 				</section>
@@ -313,7 +402,7 @@
 					<section>examples</section>
 				</section>
 
-				<section>
+				<section data-background-color='#8aa860' data-transition='zoom-in slide-out'>
 					RECAP:
 					Services are just functions.
 				</section>

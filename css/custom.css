@@ -56,6 +56,9 @@
 .reveal .slides .yuge {
   font-size: 7em;
 }
+.reveal .slides .ctrls .yuge {
+  font-size: 6em;
+}
 
 .reveal section img {
   border: none;
@@ -151,7 +154,8 @@
   font-size: 2em;
 }
 
-.reveal .slides .small {
+.reveal .slides .small,
+.reveal .slides .small li {
   font-size: 60%;
 }
 
@@ -184,6 +188,7 @@
   font-size: 40%;
 }
 
+.reveal .slides .ctrls .example img,
 .reveal .slides .views img {
   position: absolute;
   right: 5%;
@@ -201,4 +206,43 @@
   position: relative;
   top: 35px;
   letter-spacing: 10px;
+}
+
+.reveal .slides .ctrls pre {
+  margin-top: -30px;
+  margin-bottom: -30px;
+}
+
+.reveal .slides .ctrls .pull-up {
+  margin-top: -50px;
+}
+
+
+.reveal .slides .ib {
+  display: inline-block;
+}
+
+.reveal .slides .gnomes {
+  float: left;
+  margin-left: 20px;
+  width: 40%;
+}
+.reveal .slides .ctrls ul {
+  font-size: .5em;
+}
+
+.reveal .slides .ctrls ul.cleanup {
+  width: 50%;
+}
+
+.reveal .slides .ctrl-recap h2,
+.reveal .slides .ctrl-recap h1 {
+  margin: 0;
+  line-height: 0.9em;
+}
+.reveal .slides .ctrl-recap h2 {
+  letter-spacing: .03em;
+}
+.reveal .slides .ctrl-recap h2.dark-blue {
+  letter-spacing: 0.01em;
 }
