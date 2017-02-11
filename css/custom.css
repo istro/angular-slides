@@ -18,6 +18,9 @@
 .reveal .slides .red {
   color: #fc4247;
 }
+.reveal .slides .black {
+  color: #000;
+}
 .reveal .slides .dark-red {
   color: #cc363a;
 }
@@ -124,6 +127,10 @@
   margin-top: 25px;
 }
 
+.reveal .mt-25 {
+  margin-top: -25px;
+}
+
 .reveal .top {
   position: fixed;
   width: 100%;
@@ -222,6 +229,10 @@
   display: inline-block;
 }
 
+.reveal .slides .codesmell ul {
+  color: #000;
+}
+
 .reveal .slides .gnomes {
   float: left;
   margin-left: 20px;
@@ -245,4 +256,44 @@
 }
 .reveal .slides .ctrl-recap h2.dark-blue {
   letter-spacing: 0.01em;
+}
+
+.reveal .slides .depinj h1 {
+  line-height: 0.8em;
+}
+
+.reveal .slides .depinj .concept {
+  letter-spacing: .1em;
+  margin: 0 0 .2em -2.5em;
+  padding: 0;
+}
+
+.reveal .slides .depinj .example p {
+  margin-left: 40px;
+}
+
+.reveal .slides .depinj .footnote {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  font-size: .5em;
+}
+.reveal .slides .depinj .footnote span {
+  opacity: .7;
+}
+
+.reveal .slides .depinj .syringe {
+  max-height: 200px;
+}
+
+.reveal .slides .depinj pre {
+  font-size: 35%;
+}
+.reveal .slides .depinj .pull-up {
+  margin-top: -168px
+}
+
+.reveal .slides h3 img.fl {
+  margin-right: -100px;
+  margin-left: 40px;
 }
