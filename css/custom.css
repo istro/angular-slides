@@ -41,7 +41,6 @@
   background-color: #b666c6;
 }
 
-
 .reveal .slides .dark-blue,
 .reveal .slides .dark-blue h2,
 .reveal .slides .dark-blue p {
@@ -72,6 +71,10 @@
 
 .reveal .slides .subtitle {
   font-size: 30%;
+}
+
+.reveal .slides .it {
+  font-style: italic;
 }
 
 .first h1,
@@ -111,6 +114,7 @@
   margin-left: 30px;
 }
 
+.reveal .fragment .h4,
 .reveal .fragment.h3 {
   margin: 0 0 20px 0;
   font-family: "League Gothic", Impact, sans-serif;
@@ -121,6 +125,10 @@
   text-transform: uppercase;
   text-shadow: none;
   word-wrap: break-word;
+}
+
+.reveal .fragment .h4 {
+  font-size: 1.2em;
 }
 
 .reveal .mt25 {
@@ -164,6 +172,9 @@
 .reveal .slides .small,
 .reveal .slides .small li {
   font-size: 60%;
+}
+.reveal .slides .events .small {
+  font-size: 73%;
 }
 
 .reveal .slides .how .fragment {
@@ -219,11 +230,6 @@
   margin-top: -30px;
   margin-bottom: -30px;
 }
-
-.reveal .slides .ctrls .pull-up {
-  margin-top: -50px;
-}
-
 
 .reveal .slides .ib {
   display: inline-block;
@@ -294,10 +300,6 @@
   font-size: 45%;
 }
 
-.reveal .slides .depinj .pull-up {
-  margin-top: -163px
-}
-
 .reveal .slides h3 img.fl {
   margin-right: -100px;
   margin-left: 40px;
@@ -319,20 +321,30 @@
   margin-bottom: 20px;
 }
 
-.reveal .slides .dirs .pull-up {
-  margin-top: -165px
-}
-.reveal .slides .dirs .pull-up-up {
-  margin-top: -245px
-}
-
-.reveal .slides .pull-up-comps {
-  margin-top: -195px
-}
-.reveal .slides .pull-up-up-comps {
-  margin-top: -252px
-}
-
 .reveal .slides .transclude {
   background-color: #fff;
+}
+
+.dir-recap h1 {
+  margin: 0;
+  line-height: 1em;
+}
+
+.dir-recap h2 {
+  margin-bottom: 0;
+  line-height: 1em;
+  font-size: 1.32em;
+  margin-top: -19px;
+}
+
+.dir-recap h2.dark-blue {
+  margin-top: -5px;
+  font-size: 1.25em;
+}
+
+.reveal .slides .events .concept {
+  padding-left: 0;
+  margin-left: -8em;
+  letter-spacing: 6px;
+  top: 55px;
 }
