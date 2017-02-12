@@ -533,6 +533,9 @@
             <p class='small black'>
               Default behavior, shares scope with closest parent with defined scope
             </p>
+            <div class='fragment'>
+              <img src='img/panda_rage.gif'>
+            </div>
             <aside class='notes'>
               DON'T DECLARE NEW ATTRIBUTES ON SHARED SCOPE<br>
               it can lead to confusing bugs & increases coupling
@@ -623,31 +626,12 @@
           <h2 class='no-transform dark-blue''>potentially with associated HTML</h2>
 
           <p class='fragment corner-ribbon'>RECAP</p>
-        </section>
-
-<!--
-        <section data-background-color='#265ba3'>
-
-          <p class='fragment'></p>
-
           <aside class='notes'>
-
-            <pre>
-              <code data-trim>
-              app.directive('fancyFrame', function() {
-                return {
-                  restrict: 'E',
-                  template: '/templates/fancy_frame.html',
-                  transclude: true
-                }
-              })
-              </code>
-            </pre>
-
+            Direct DOM manipulation<br>
+            Encapsulate functionality by including markup with logic<br>
+            Receive view events
           </aside>
         </section>
- -->
-
 
         <section class='events'>
           <section data-background-color='#ff4342'>
@@ -691,12 +675,58 @@
                   })
                 </code>
               </pre>
-            </div>          </section>
+            </div>
+          </section>
         </section>
 
         <section>
-          <section>SERVICES</section>
-          <section>examples</section>
+
+          <section data-background-color='#ff9800'>
+            <h1 class='yuge'>SERVICES</h1>
+            <aside class='notes'>
+              Functions to handle non-view logic<br>
+              e.g. communicate with the server<br>
+              Singletons - Hold data & state
+            </aside>
+          </section>
+
+<!--
+        <section data-background-color='#265ba3'>
+
+          <p class='fragment'></p>
+
+          <aside class='notes'>
+
+            <pre>
+              <code data-trim>
+              app.directive('fancyFrame', function() {
+                return {
+                  restrict: 'E',
+                  template: '/templates/fancy_frame.html',
+                  transclude: true
+                }
+              })
+              </code>
+            </pre>
+
+          </aside>
+        </section>
+ -->
+          <section>
+          instantiation
+          </section>
+          <section>
+          business logic example
+          </section>
+          <section>
+          state management example
+          </section>
+          <section>
+            server communication
+          </section>
+          <section>
+            filter example
+          </section>
         </section>
 
         <section data-background-color='#8aa860' data-transition='zoom-in slide-out'>
