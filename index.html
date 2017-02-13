@@ -679,8 +679,7 @@
           </section>
         </section>
 
-        <section>
-
+        <section class='services'>
           <section data-background-color='#ff9800'>
             <h1 class='yuge'>SERVICES</h1>
             <aside class='notes'>
@@ -690,60 +689,308 @@
             </aside>
           </section>
 
+          <section data-background-color='#fff'>
+            <img class='fr' src='img/raptor.png'>
+            <h2 class='dark-blue'>Instantiation:</h2>
+            <p class='black'>Just use these:</p>
+            <pre>
+              <code data-trim>
+                app.factory('sharedLogicService', function() {});
+                app.value('sharedDataService', {})
+              </code>
+            </pre>
+
+            <div class='fragment'>
+              <p class='black'>There are a few more specialized ones:</p>
+              <pre>
+                <code data-trim>
+                  app.service('name', function() {})
+                  app.filter('name', function() {});
+                  app.constant('name', value);
+                  $provide.provider('name', function() {})
+                </code>
+              </pre>
+              <p class='small'>see notes for differences, but for most use cases first two are sufficient</p>
+            </div>
+            <aside class='notes'>
+              factory - similar to how controllers and directives are declared
+              value - Shorthand for factory() with no params - just returns the value given.<br>
+              <br><br>
+              service -  Also calls factory() internally, but returns a constructor function.<br>
+              filter - special because "filter" gets appended, and can be used in views<br>
+              constant - special because it gets set before bootstrapping (so constants can be used in app config)<br>
+              $provider.provide - what `factory` uses internally, can be configurable at app config, usually don't need that level of configuration.
+            </aside>
+          </section>
+
+          <section class='example' data-background-color='#fff'>
+            <img class='fr' src='img/hmm.png'>
+            <h2 class='dark-blue'>Business logic</h2>
+            <p>Suppose we wanted a way to convert imperial/metric units. It's easy to imagine a case where we would want to share that functionality between different components on a page. You could implement it in a similar manner:</p>
+            <pre>
+              <code data-trim>
+                app.factory('unitService', function() {
+                  return {
+                    convert: function(value, unit) {
+                      var conversionFactors = { 'kg': 2.20462, 'lb': 0.453592 };
+                      return Math.round(value * conversionFactors[unit]*100))/100;
+                    }
+                  }
+                });
+              </code>
+            </pre>
+            <div class='fragment'>
+              <p>
+                Then, in our controller, we could inject the service as a dependency - and use it at will:
+              </p>
+              <pre>
+                <code data-trim>
+                  app.controller('RecipeCtrl', function(unitService, spyService) {
+                    var enemy_kitchen = spyService.infiltrateEnemyKitchen();
+                    var raw_recipe_data = spyService.stealRecipes(enemy_kitchen);
+                    var secret_ingredient_amount = unitService.convert(raw_recipe_data['sauce'], 'kg');
+                  })
+                </code>
+              </pre>
+              <img src='img/success.png'>
+            </div>
+          </section>
+
+          <section class='example' data-background-color='#fff'>
+            <img class='fr' src='img/hmm.png'>
+            <h2 class='dark-blue'>State management</h2>
+            <p class='it'>
+              NB: Services are singletons, so they are perfect for keeping track of transient aspects of app state
+            </p>
+            <p>
+              Here's a slightly simplified real-life example a service that keep track of multiple places on a page where user can select a date:
+            </p>
+            <pre>
+              <code data-trim>
+                app.service('selectedDateService', function($rootScope) {
+                  function getSelectedDate(dateType) {
+                    return dates[dateType];
+                  }
+                  function setSelectedDate(date, dateType) {
+                    dates[dateType] = date;
+                    $rootScope.$broadcast("DATE_CHANGED_" + dateType, date);
+                  }
+                  var dates = {};
+                  return {
+                    setSelectedDate: setSelectedDate,
+                    getSelectedDate: getSelectedDate
+                  };
+                });
+              </code>
+            </pre>
+            <div class='fragment'>
+              <p>
+                Note we're injecting <code class='remark-inline-code'>$rootScope</code>, and making use of events - in our use case, some components of the page needed to react to date change, but we did not want to expose ability to change date to these passive components
+              </p>
+              <img src='img/success.png'>
+            </div>
+          </section>
+
+
+          <section class='example' data-background-color='#fff'>
+            <img class='fr' src='img/hmm.png'>
+            <h2 class='dark-blue'>Communication services</h2>
+            <p>
+              Another use for services is for individual functions. Example of that would be <code class='remark-inline-code'>$resource</code> service, that makes it trivial to connect to restful APIs:
+            </p>
+            <pre>
+              <code data-trim>
+                app.factory('users', function($resource) {
+                  return $resource('/users/:id', {id:'@id'});
+                })
+              </code>
+            </pre>
+            <div class='fragment'>
+              <p>
+                Then, in our controller we can fetch a list of users, a single user, or do CRUD actions on a user:
+              </p>
+              <pre>
+                <code data-trim>
+                  app.controller('MainCtrl', function($scope, users) {
+                    $scope.user = users.get({id:123});  // this will return a promise & make an ajax GET request.
+
+                    // let's assume saveUser gets called by user, e.g. by clicking a button
+                    function saveUser(data) {
+                      $scope.user.data = data;
+                      $scope.user.$save();              // this will make an ajax UPDATE request.
+                    }
+                  });
+                </code>
+              </pre>
+              <img src='img/success.png'>
+            </div>
+          </section>
+
+          <section class='example' data-background-color='#fff'>
+            <img class='fr' src='img/hmm.png'>
+            <h2 class='dark-blue'>Special service: filters</h2>
+            <p>
+              A filter in AngularJS is a service that is typically used to modify interpolated values directly in the view (but can be used in JS as well).
+            </p>
+            <p class='it'>Injection gotcha: it's defined with a name, but injected with <code class='remark-inline-code'>Filter</code> suffix</p>
+            <p><code class='remark-inline-code'>Filter</code> service must return a function (which gets passed in whatever is "filtered")</p>
+            <img class='fr' src='img/kimi.jpg'>
+            <pre>
+              <code data-trim>
+                app.filter('kimi', function() {
+                  return function(input) {
+                    return 'Bwoah ' + input + ' itsthesameforeverybody';
+                  }
+                })
+              </code>
+            </pre>
+            <div class='fragment'>
+              <p>
+                Then, in the view you could use it like this:
+              </p>
+              <pre>
+                <code data-trim>
+                  &lt;span&gt;{{ 'it's just racing' | kimi }}&lt;/span&gt;
+
+                  &lt;!-- the above will render like this: --&gt;
+                  &lt;span&gt;Bwoah it's just racing itsthesameforeverybody&lt;/span&gt;
+                </code>
+              </pre>
+            </div>
+          </section>
+        </section>
+
+        <section class='serv-recap recap' data-background-color='#8aa860' data-transition='zoom-in slide-out'>
+          <h1 class='dark-red'>Services</h1>
+          <h2 class='state no-transform'>hold app state</h2>
+          <h2 class='no-transform dark-blue'>non-view logic</h2>
+
+          <p class='fragment corner-ribbon'>RECAP</p>
+
+          <aside class='notes'>
+            Functions to handle non-view logic<br>
+            e.g. communicate with the server<br>
+            Singletons - Hold data & state
+          </aside>
+        </section>
+
 <!--
         <section data-background-color='#265ba3'>
 
           <p class='fragment'></p>
 
+          <code class='remark-inline-code'></code>
+
+
           <aside class='notes'>
 
             <pre>
               <code data-trim>
-              app.directive('fancyFrame', function() {
-                return {
-                  restrict: 'E',
-                  template: '/templates/fancy_frame.html',
-                  transclude: true
-                }
-              })
+
               </code>
             </pre>
 
           </aside>
         </section>
  -->
-          <section>
-          instantiation
-          </section>
-          <section>
-          business logic example
-          </section>
-          <section>
-          state management example
-          </section>
-          <section>
-            server communication
-          </section>
-          <section>
-            filter example
-          </section>
-        </section>
 
-        <section data-background-color='#8aa860' data-transition='zoom-in slide-out'>
-          <h1>Services are just functions</h1>
-          <p class='fragment corner-ribbon'>RECAP</p>
+        <section>
+          <section data-background-color='#265ba3'>
+            <h1>COMMUNICATION</h1>
+
+            <h3 class='no-transform fragment'>via $scope</h3>
+            <h3 class='no-transform fragment'>via events</h3>
+            <h3 class='no-transform fragment'>via services</h3>
+            <aside class='notes'>
+              $scope - good for tiny applications with just a few scopes<br>
+              events - good for parent/child interactions<br>
+              services - better encapsulation at slightly higher setup costs, easier maintenance
+            </aside>
+          </section>
+
+          <section class='cons scope-cons' data-background-color='#369abf' data-transition='slide-in fade-out'>
+            <div>
+              <h2>via $scope: cons</h2>
+              <p class='fragment'>- All the things that need to be communicated about need to be on parent scope (not very OO)</p>
+              <p class='fragment'>- Logic about interactions between child directives ends up living on the parent</p>
+              <p class='fragment'>- Tight coupling between your child dirs & parent dir</p>
+              <p class="fragment">- As app grows, name conflicts or inadvertent changes from mysterious places</p>
+              <p class="fragment">- Hard to count the dependencies of a controller as it may also depend on services injected into parent directive</p>
+            </div>
+          </section>
+          <section class='proscons' data-background-color='#3ec8ef' data-transition='fade'>
+            <div class='dark-blue'>
+              <h2>via $scope: cons</h2>
+              <p>- All the things that need to be communicated about need to be on parent scope (not very OO)</p>
+              <p>- Logic about interactions between child directives ends up living on the parent</p>
+              <p>- Tight coupling between your child dirs & parent dir</p>
+              <p>- As app grows, name conflicts or inadvertent changes from mysterious places</p>
+              <p>- Hard to count the dependencies of a controller as it may also depend on services injected into parent directive</p>
+            </div>
+            <h2 class='mt25'>via $scope: pros</h2>
+            <p class='fragment'>+ EASY to get started</p>
+          </section>
+
+          <section class='cons event-cons' data-background-color='#369abf' data-transition='slide-in fade-out'>
+            <div>
+              <h2>via events: cons</h2>
+              <p class="fragment">- no direct way to communicate with siblings</p>
+              <p class="fragment">- event can be listened to by anyone (and canceled by anyone)</p>
+              <p class="fragment">- Events are a form of global</p>
+              <p class="fragment">- Event names are strings (potential for conflicts)</p>
+            </div>
+          </section>
+          <section class='proscons' data-background-color='#3ec8ef' data-transition='fade'>
+            <div class='dark-blue'>
+              <h2>via events: cons</h2>
+              <p>- no direct way to communicate with siblings</p>
+              <p>- event can be listened to by anyone (and canceled by anyone)</p>
+              <p>- Events are a form of global</p>
+              <p>- Event names are strings (potential for conflicts)</p>
+            </div>
+            <h2 class='mt25'>via events: pros</h2>
+            <p class="fragment">
+              + Logic can live in the appropriate controllers
+            </p>
+          </section>
+
+          <section class='cons service-cons' data-background-color='#369abf' data-transition='slide-in fade-out'>
+            <div>
+              <h2>via services: cons</h2>
+              <p class="fragment">- More setup work</p>
+              <p class="fragment">- More mental effort to differentiate business logic from view logic</p>
+            </div>
+          </section>
+          <section class='proscons' data-background-color='#3ec8ef' data-transition='fade'>
+            <div class='dark-blue'>
+              <h2>via services: cons</h2>
+              <p>- More setup work</p>
+              <p>- More mental effort to differentiate business logic from view logic</p>
+            </div>
+            <h2 class='mt25'>via services: pros</h2>
+            <p class="fragment">
+              + Injected only where needed
+            </p>
+            <p class="fragment">
+              + Being singletons, state is shared
+            </p>
+            <p class="fragment">
+              + Abstracts away the business logic, controllers can be more declarative
+            </p>
+          </section>
+
         </section>
 
         <section>
-          <section>COMMUNICATION</section>
-          <section>via scope (pros, cons in notes)</section>
-          <section>via events (pros, cons in notes)</section>
-          <section>via services(pros, cons in notes)</section>
-        </section>
-
-        <section>
-          <section>File structure</section>
-          <section>examples, pros/cons</section>
+          <section>
+            <h2>naming & file structure</h2>
+            <aside class="notes">
+              Naming - prefix, by what it is<br>
+              small project - directives file, services file etc.<br>
+              bigger project - separate folders by type<br>
+              bigger project - separate folders by feature<br>
+            </aside>
+          </section>
         </section>
 
       </div>

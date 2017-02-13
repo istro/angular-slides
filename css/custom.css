@@ -103,6 +103,15 @@
 .cons > div {
   margin-top: -29%;
 }
+.cons.scope-cons > div {
+  margin-top: -17.5%;
+}
+.cons.event-cons > div {
+  margin-top: -19%;
+}
+.cons.service-cons > div {
+  margin-top: -27%;
+}
 
 .cons .fragment,
 .proscons p,
@@ -347,4 +356,25 @@
   margin-left: -8em;
   letter-spacing: 6px;
   top: 55px;
+}
+
+.reveal .slides .services .example p {
+  color: #000;
+  text-align: left;
+  font-size: .5em;
+  width: 90%;
+  margin-left: 5%;
+}
+
+.reveal .slides .services .example pre {
+  font-size: .4em;
+}
+
+.reveal .slides .serv-recap h1 {
+  line-height: .8em;
+}
+.reveal .slides .serv-recap h2 {
+  margin: 0;
+  line-height: .83em;
+  font-size: 2.4em;
 }
