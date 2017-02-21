@@ -661,7 +661,7 @@
               <pre>
                 <code data-trim>
                   app.controller('myCtrl', function($scope) {
-                    $scope.$emit('up the hierarchy', { whatever: 'data I want'});
+                    $scope.$emit('my_event', { whatever: 'data I want to send up the hierarchy'});
                   })
                 </code>
               </pre>
@@ -671,7 +671,7 @@
               <pre>
                 <code data-trim>
                   app.controller('myCtrl', function($scope) {
-                    $scope.$broadcast('down the hierarchy', { some: 'other data'});
+                    $scope.$broadcast('my_event', { some_other_date: 'down the hierarchy'});
                   })
                 </code>
               </pre>
